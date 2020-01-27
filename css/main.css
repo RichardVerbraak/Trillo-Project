@@ -352,6 +352,51 @@ body {
           justify-content: center;
 }
 
+.user-nav__user {
+  position: relative;
+}
+
+.user-nav__user--menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  list-style: none;
+  background-color: #fff;
+  width: 100%;
+  height: 18rem;
+  -webkit-transform: translateY(20%);
+          transform: translateY(20%);
+  z-index: 10000000;
+  opacity: 0;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.user-nav__user--menu-item {
+  color: var(--color-primary);
+  padding: 1rem;
+}
+
+.user-nav__user--menu-item:hover {
+  color: var(--color-primary-dark);
+}
+
+.user-nav__user:hover > .user-nav__user--menu {
+  opacity: 1;
+  -webkit-transform: translateY(40%);
+          transform: translateY(40%);
+}
+
 .user-nav__user-photo {
   height: 3.75rem;
   border-radius: 50%;

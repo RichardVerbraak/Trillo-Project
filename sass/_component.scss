@@ -117,8 +117,44 @@
     }
 
     &__user {
+        position: relative;
+
+        &--menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            
+            position: absolute;
+            top: 0;
+            left: 0;            
+            list-style: none;            
+            background-color: #fff;
+            width: 100%;
+            height: 18rem;
+
+            transform: translateY(20%);
+            z-index: 10000000;
+            opacity: 0;
+            transition: all .4s;
+
+            &-item {
+                color: var(--color-primary);
+                padding: 1rem;
+
+                &:hover {
+                    color: var(--color-primary-dark)
+                }
+            }
+        }
         
     }
+
+    &__user:hover > &__user--menu {
+        opacity: 1;
+        transform: translateY(40%);
+    }
+    
 
     &__user-photo {
         height: 3.75rem;
