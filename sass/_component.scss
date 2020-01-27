@@ -236,9 +236,7 @@
 //////////////////////////////////////////
 // GALLERY
 .gallery {
-    display: flex;
-    
-    
+    display: flex;   
     
     &__photo {
         width: 100%;
@@ -249,31 +247,40 @@
         position: relative;
     }
 
+    // Caption starting out invisible
+    // Not 100% perfect on the timing
     &__item--caption {
         position: absolute;
+        color: var( --color-grey-light-1);
         font-size: 1.5rem;        
-        top: 90%;
-        height: 0;
+        bottom: 0;
         width: 100%;
         text-align: center;
+        
+        opacity: 0;
+        transition: all .5s .2s;                
     }
 
     &__item::before {
         content: "";        
         position: absolute;
-        top: 100%;
+        bottom: 0;
         left: 0;
         width: 100%;
-        height: 3px;
-        transform: scaleY(0);
+        height: 0;
+        opacity: 50%;
         background-color: var(--color-primary-light);
+
+        transition: all .7s ease-out;
     }
     
-    &__item:hover::before {
-        transform: translateY(-100%);
-        transition: height 1.5s;
-        height: 22.5%;
-        opacity: 50%;
+    &__item:hover::before {    
+        height: 25%;     
+    }
+    
+    &__item:hover > &__item--caption {
+        opacity: 1;
+        transform: translateY(-50%);
     }
     
 }
